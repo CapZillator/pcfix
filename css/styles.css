@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@keyframes scroll {
+    20% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    80% {
+        transform: translateY(0%);
+    }
+}
+@keyframes scaleSteps {
+    50% {
+        transform: scale(.3);
+    }
+}
+@keyframes banner {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    22% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes banner2 {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    30% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    32% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes banner3 {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    42% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes banner4 {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    52% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes banner5 {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    62% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes screenBlink {
+    0% {
+        opacity: 0;
+        filter: hue-rotate(0deg);
+    }
+    20% {
+        opacity: 0;
+    }
+    20.1% {
+        opacity: 1;
+    }
+    34.9% {
+        filter: invert(0%);
+    }
+    35% {
+        filter: invert(100%);
+    }
+    39.9% {
+        filter: invert(0%);
+    }
+    40% {
+        filter: hue-rotate(0deg);
+        transform: translate(0, 0);
+    }
+    42% {
+        filter: hue-rotate(160deg);
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        filter: hue-rotate(160deg);
+        opacity: 0;
+    }
+}
+@keyframes screenDark {
+    0% {
+        opacity: 0;
+    }
+    22% {
+        opacity: 0;
+    }
+    23% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff url('../img/main2.svg') no-repeat top center;
+    background-size: 100% auto;
+    font-family: 'Roboto', sans-serif;
+    --white-color: #ffffff;
+    --white-opacity-color: rgba(255, 255, 255, .9);
+    --main-bg-color: #cc3300;
+    --main-dark-color: #000000;
+    --submain-color: #e75322;
+    --active-range: #ff3300;
+    --transition-standart: .3s;
+    --banner-duration: 6s;
+    --single-margin-standart: .5rem;
+    --single-margin-big: 1rem;
+    --padding-full-standart: .5rem 1rem;
+    --space-big: 2rem;
+    --shadow-standart: 0 0 .5rem .1rem rgba(0,0,0, .5);
+}
+main {
+    text-align: center;
+}
+button {
+    text-transform: uppercase;
+    padding: var(--padding-full-standart);
+    font-weight: bold;
+    letter-spacing: .1rem; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 1s;
+}
+button:hover {
+    box-shadow: inset 0 0 0 1.5rem var(--active-range);
+}
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+input {
+    outline: none;
+    border: 1px solid var(--main-bg-color);
+    background: var(--main-bg-color);
+    color: var(--white-color);
+    font-size: 1.1rem;
+    letter-spacing: .1rem;
+    padding: .25rem .5rem;
+}
+input::placeholder {
+    color: var(--white-color);
+}
+.HeaderMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white-color);
+    padding: var(--single-margin-standart) 0;
+    
+}
+.HeaderMenu * {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.HeaderMenu div {
+    margin: 0 1rem;
+}
+.HeaderMenu ul,
+.SideMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.HeaderMenu ul > li {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    display: inline-block;
+    margin: 0 var(--single-margin-standart);
+    transition: .5s;
+}
+.SideMenu * {
+    cursor: pointer;
+    color: var(--main-dark-color);
+    transition: var(--transition-standart);
+}
+.SideMenu > div {
+    text-align: center;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-bottom: var(--space-big);
+}
+.SideMenu p {
+    margin: 0;
+    padding: 0;
+}
+.SideMenu ul > li { 
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    margin: 0 0 var(--single-margin-standart) 0;
+    padding: 0;
+}
+.SideMenu ul > li:hover,
+.SideMenu p:hover,
+.SideMenu a:hover{ 
+    color: var(--submain-color);
+}
+.HeaderMenu,
+.HeaderMenuScroll {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: var(--transition-standart);
+}
+.HeaderMenuScroll {
+    background: var(--submain-color) linear-gradient(45deg, var(--main-dark-color), var(--submain-color));
+}
+.HeaderLogo {
+    background: url("../img/logo.svg") no-repeat;
+    background-size: cover;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+.HeaderPhoneBlock {
+    background: url("../img/phone.svg") no-repeat left center;
+    background-size: auto 100%;
+    padding-left: 3rem;
+}
+.SideMenu,
+.SideMenuHide,
+.MenuButton {
+    display: none;
+}
+.OrderCallWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .7);
+    transform: scale(1);
+    transition: var(--transition-standart);
+}
+.OrderCallBlock {
+    position: absolute;
+    z-index: 41;
+    top: 50%;
+    left: 50%;
+    max-width: 20rem;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    background: var(--white-color);
+    transition: var(--transition-standart);
+    box-shadow: 0 0 .5rem 0 rgba(255, 255, 255, .5);
+    padding: 0 var(--single-margin-big) var(--single-margin-big) var(--single-margin-big);
+}
+.OrderCallWrapperHide,
+.OrderCallBlockHide {
+    transform: scale(0);
+}
+.ScreenSeparator {
+    position: relative;
+    z-index: 4;
+}
+.ScreenSeparator:nth-of-type(odd) > div {
+    position: absolute;
+    left: 0;
+}
+.ScreenSeparator:nth-of-type(even) > div {
+    position: absolute;
+    right: 0;
+}
+.ScreenSeparator > div div {
+    position: absolute;
+    background: var(--submain-color) url('../img/circuit_board2.svg') no-repeat center center;
+    background-size: cover;
+}
+.SeparatorLeftSquare1,
+.SeparatorRightSquare1 {
+    width: 3rem;
+    height: 3rem;
+    transform: translate(50%, -30%);
+}
+.SeparatorLeftSquare2,
+.SeparatorRightSquare2 {
+    transform: translate(260%, -70%) rotate(180deg);
+    width: 2rem;
+    height: 2rem;
+}
+.SeparatorLeftSquare3,
+.SeparatorRightSquare3 {
+    transform: translate(530%, -20%) rotate(-90deg);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.SeparatorRightSquare1 {
+    transform: translate(-150%, -30%) scale(-1, 1);
+}
+.SeparatorRightSquare2 {
+    transform: translate(-360%, -70%) rotate(180deg) scale(-1, 1);
+}
+.SeparatorRightSquare3 {
+    transform: translate(-630%, -20%) rotate(90deg) scale(-1, 1);
+}
+.ServiciesBlock,
+.AdvantagesBlock,
+.ExpirienceBlock {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.FirstScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+.FirstScreen h1,
+.FirstScreen > article > div p {
+    margin: 0;
+    padding: 0;
+}
+.FirstScreen > article {
+    max-width: 40rem;
+    background: var(--white-opacity-color);
+    padding: var(--single-margin-big) var(--single-margin-big);
+    margin: 2rem 4rem;
+    color: var(--main-dark-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.FirstScreen > article > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#Skull {
+    background: url('../img/skull.svg') no-repeat;
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 var(--single-margin-big) 0 0;
+}
+.FirstScreen button,
+.FourthScreen button,
+.FinalScreen button,
+.OrderCallBlock button {
+    background: var(--main-bg-color);
+    color: var(--white-color);
+}
+.FirstScreen > div {
+    position: relative;
+    width: 831px;
+    height: 480px;
+    overflow: hidden;
+}
+#BigLogoWrapper,
+#BigLogoAnimation,
+#BigLogoAnimation::after
+{
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: url('../img/notebook.png') no-repeat center left;
+    background-size: 831px 480px;
+    width: 831px;
+    height: 480px;
+}
+#BigLogoAnimation {
+    content: "";
+    z-index: 2;
+    background: url('../img/dark_screen.png') no-repeat center left;
+    animation: screenDark 10s infinite;
+}
+#BigLogoAnimation::after {
+    content: "";
+    z-index: 3;
+    background: url('../img/error_screen.png') no-repeat center left;
+    animation: screenBlink 10s infinite;
+}
+#FullListButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--single-margin-big);
+}
+.ListArrow {
+    background: url('../img/arrow.svg') no-repeat center center;
+    background-size: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: .5rem;
+    transition: var(--transition-standart);
+}
+.ListArrowRotate {
+    transform: rotate(90deg);
+}
+#FullListButton span {
+    font-weight: 600;
+    color: var(--main-bg-color);
+    border-bottom: .15rem dotted var(--main-bg-color);
+    cursor: pointer;
+}
+.FullListOfServicies {
+    transition: var(--transition-standart);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.FullListOfServiciesHide {
+    height: 0;
+    transform: translateY(-20%);
+    transition: var(--transition-standart);
+}
+.FullListOfServicies p {
+    margin: 0;
+}
+.ServiceInList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+    margin: var(--single-margin-standart);
+}
+.ServiceInList > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ServiceMarker {
+    background: url('../img/chip.svg') no-repeat center center;
+    background-size: cover;
+    height: 1.3rem;
+    width: 1.3rem;
+    margin: 0 var(--single-margin-standart);
+}
+.ServicePrice {
+    font-weight: bold;
+    color: var(--main-bg-color);
+}
+.SecondScreen,
+.ThirdScreen,
+.FourthScreen,
+.FifthScreen,
+.FinalScreen {
+    position: relative;
+    z-index: 1;
+    padding: var(--padding-full-standart);
+    background: var(--white-opacity-color);
+}
+.ThirdScreen,
+.FifthScreen {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-bg-color);
+    background: radial-gradient(circle, rgba(204,51,0,1) 0%, rgba(130,6,6,1) 100%);
+    color: var(--white-color);
+    box-shadow: var(--shadow-standart);
+}
+.FourthScreen,
+.FinalScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--space-big) var(--space-big);
+}
+.FourthScreen article {
+    max-width: 20rem;
+}
+.FinalScreen article{
+    max-width: 40rem;
+}
+.FinalScreen article p {
+    font-weight: 500;
+    text-align: justify;
+}
+.FifthScreen p {
+    font-size: 1.1rem;
+}
+.SecondScreen {
+    padding-bottom: var(--space-big);
+}
+.BlockImage {
+    width: 100px;
+    height: 100px;
+}
+.ServiceHeader {
+    transform: scale(0);
+    transition: 1s;
+}
+.SingleService,
+.SingleAdvantage {
+    margin: 0 var(--single-margin-standart);
+    padding: var(--single-margin-standart) var(--single-margin-standart);
+    background: white;
+    transition: 1s;
+    max-width: 10rem;
+    transform: scale(0);
+}
+.SingleAdvantage {
+    background: none;
+}
+.ServiceHeaderMotion,
+.SingleServiceMotion,
+.SingleAdvantageMotion {
+    transform: scale(1);
+}
+.ScrollIndicator {
+    background: url("../img/scroll.svg") no-repeat center center;
+    background-size: cover;
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem auto 0 auto;
+    animation: scroll 3s infinite;
+}
+.ScrollIndicatorHide {
+    display: none;
+}
+.SingleService {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 22rem;
+}
+.SingleService:hover {
+    box-shadow: var(--shadow-standart);
+}
+.SingleService button {
+    background: var(--main-bg-color);
+    color: var(--white-color);
+}
+.FourthScreen {
+    padding-bottom: var(--space-big);
+}
+.Banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-big) 4rem var(--space-big) 0;
+}
+.BannerEl1,
+.BannerEl2,
+.BannerEl3,
+.BannerEl4 {
+    background: url("../img/banner_el1.svg") no-repeat center center;
+    background-size: cover;
+    width: 5rem;
+    height: 5rem;
+}
+.BannerEl1:nth-of-type(1) {
+    animation: banner var(--banner-duration) infinite;
+}
+.BannerEl1:nth-of-type(3) {
+    animation: banner3 var(--banner-duration) infinite;
+}
+.BannerEl2 {
+    background: url("../img/banner_el2.svg") no-repeat center center;
+    background-size: cover;
+    animation: banner5 var(--banner-duration) infinite;
+}
+.BannerEl3 {
+    background: url("../img/banner_el3.svg") no-repeat center center;
+    background-size: cover;
+    animation: banner2 var(--banner-duration) infinite;
+}
+.BannerEl4 {
+    background: url("../img/banner_el4.svg") no-repeat center center;
+    background-size: cover;
+    animation: banner4 var(--banner-duration) infinite;
+}
+.ExpirienceBlock > div {
+    margin: 0 var(--single-margin-big);
+    text-align: center;
+    max-width: 200px;
+}
+.BackgroundCircle,
+.BarCircle {
+    fill: none;
+    stroke: rgba(0,0,0, .3);
+    stroke-width: 1rem;
+}
+.BarCircle {
+    stroke: #ffffff;
+    stroke-dasharray: 0 565.2;
+    stroke-dashoffset: 141.3;
+}
+.BarCirclePercentage {
+    stroke-dasharray: 565.2 0;
+    stroke-dashoffset: 141.3;
+    transition: 1s;
+}
+.BarCircleAgain {
+    stroke-dasharray: 463.45 101.75;
+    stroke-dashoffset: 141.3;
+    transition: 1s;
+}
+.BarCircleTime {
+    stroke-dasharray: 423.9 141.3;
+    stroke-dashoffset: 141.3;
+    transition: 1s;
+}
+.CircleText,
+.CircleTextRow1,
+.CircleTextRow2 {
+    font-size: 3rem;
+    line-height: 4rem;
+    fill: var(--white-color);
+    text-anchor: middle;
+    transform: translateY(1rem);
+}
+.CircleTextRow1 {
+    transform: translateY(0);
+}
+.CircleTextRow2 {
+    transform: translateY(2rem);
+}
+.ArticleImage {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 4rem;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--padding-full-standart);
+    background: var(--main-dark-color);
+    color: var(--white-color);
+}
+footer > div:nth-of-type(2){
+    text-align: right;
+}
+@media screen and (min-width: 2000px){
+    .HeaderMenu {
+        width: 70%;
+        padding: var(--single-margin-standart) 15%;
+    }
+    footer {
+        padding: var(--single-margin-standart) 15%;
+    }
+}
+@media screen and (max-width: 960px){
+    body {
+        background: #ffffff url('../img/main2.svg') no-repeat top center;
+        background-size: 150% auto;
+    }
+    .HeaderLogo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .MenuButton {
+        display: block;
+        background: url("../img/menu.svg") no-repeat center center;
+        background-size: cover;
+        width: 2rem;
+        height: 2rem;
+    }
+    .HeaderMenu nav,
+    .HeaderPhoneBlock {
+        display: none;
+    }
+    .SideMenu,
+    .SideMenuHide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 30;
+        height: 100vh;
+        background: #fff7d7;
+        padding: var(--single-margin-big) var(--single-margin-big) 0 var(--single-margin-big);
+        transform: translateX(0%);
+        transition: var(--transition-standart);
+        box-shadow: var(--shadow-standart);
+    }
+    .SideMenuHide {
+        transform: translateX(-110%);
+    }
+    .FirstScreen {
+        margin-top: 3rem;
+        flex-direction: column-reverse;
+    }
+    .FirstScreen > article {
+        max-width: 20rem;
+    }
+    .FirstScreen > div {
+        width: 277px;
+        height: 160px;
+    }
+    #Skull {
+        margin: var(--single-margin-standart) var(--single-margin-big);
+    }
+    #BigLogoWrapper,
+    #BigLogoAnimation,
+    #BigLogoAnimation::after
+    {
+        background-size: 277px 160px;
+        width: 277px;
+        height: 160px;
+    }
+    .SeparatorLeftSquare1,
+    .SeparatorRightSquare1 {
+        transform: translate(50%, -30%);
+        width: 2rem;
+        height: 2rem;
+    }
+    .SeparatorLeftSquare2,
+    .SeparatorRightSquare2 {
+        transform: translate(250%, -70%) rotate(180deg);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .SeparatorLeftSquare3,
+    .SeparatorRightSquare3 {
+        transform: translate(600%, -30%) rotate(-90deg);
+        width: 1rem;
+        height: 1rem;
+    }
+    .SeparatorRightSquare1 {
+        transform: translate(-150%, -30%) scale(-1, 1);
+    }
+    .SeparatorRightSquare2 {
+        transform: translate(-350%, -70%) rotate(180deg) scale(-1, 1);
+    }
+    .SeparatorRightSquare3 {
+        transform: translate(-700%, -30%) rotate(90deg) scale(-1, 1);
+    }
+    .SingleService {
+        margin-bottom: var(--single-margin-big);
+    }
+    .ExpirienceBlock div {
+        margin: 0 var(--single-margin-big) var(--space-big) var(--single-margin-big);
+    }
+    .FourthScreen {
+        flex-direction: column;
+        padding: var(--space-big) var(--space-big);
+    }
+    .Banner {
+        margin: 1rem 0 0 0;
+    }
+    .BannerEl1,
+    .BannerEl2,
+    .BannerEl3,
+    .BannerEl4 {
+        width: 3rem;
+        height: 3rem;
+    }
+    .FinalScreen {
+        flex-direction: column-reverse;
+        padding: var(--space-big) var(--space-big);
+    }
+    .ArticleImage {
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--padding-full-standart);
+    }
+    footer > div,
+    footer > div:nth-of-type(2) {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 480px){
+    #Skull {
+        margin-bottom: var(--single-margin-big);
+    }
+    .SingleService,
+    .SingleAdvantage {
+        min-height: 2rem;
+        max-width: 15rem;
+    }
+}
