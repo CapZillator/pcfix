@@ -444,9 +444,7 @@ input::placeholder {
     height: 480px;
     overflow: hidden;
 }
-#BigLogoWrapper,
-#BigLogoAnimation,
-#BigLogoAnimation::after
+#BigLogoWrapper
 {
     position: absolute;
     z-index: 4;
@@ -458,15 +456,26 @@ input::placeholder {
     height: 480px;
 }
 #BigLogoAnimation {
-    content: "";
+    position: absolute;
     z-index: 2;
-    background: url('../img/dark_screen.png') no-repeat center left;
+    top: 35px;
+    left: 105px;
+    background: var(--main-dark-color);
+    width: 620px;
+    height: 380px;
     animation: screenDark 10s infinite;
 }
 #BigLogoAnimation::after {
-    content: "";
+    animation: screenBlink 10s infinite;
+    position: absolute;
     z-index: 3;
-    background: url('../img/error_screen.png') no-repeat center left;
+    content: "";
+    top: 0;
+    left: 0;
+    background: url('../img/error_screen.jpg') no-repeat center left;
+    background-size: 620px 380px;
+    width: 620px;
+    height: 380px;
     animation: screenBlink 10s infinite;
 }
 #FullListButton {
@@ -792,13 +801,21 @@ footer > div:nth-of-type(2){
     #Skull {
         margin: var(--single-margin-standart) var(--single-margin-big);
     }
-    #BigLogoWrapper,
-    #BigLogoAnimation,
-    #BigLogoAnimation::after
-    {
+    #BigLogoWrapper {
         background-size: 277px 160px;
         width: 277px;
         height: 160px;
+    }
+    #BigLogoAnimation {
+        top: 12px;
+        left: 35px;
+        width: 207px;
+        height: 127px;
+    }
+    #BigLogoAnimation::after {
+        background-size: 207px 127px;
+        width: 207px;
+        height: 127px;
     }
     .SeparatorLeftSquare1,
     .SeparatorRightSquare1 {
