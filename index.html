@@ -4,7 +4,6 @@
         <meta charset='UTF-8' lang='ru' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
         <meta name="theme-color" content="#e75322">
-        <meta http-equiv="Cache-control" content="public">
         <link rel='stylesheet' href='css/styles.css' />
         <link rel='icon' href='http://hmara.by/favicon.ico' type='image/x-icon' />
         <script src='js/index.js'></script>
@@ -69,59 +68,64 @@
                 <div class="ScrollIndicator"></div>
                 <article>
                     <h2 class="ServiceHeader">Услуги</h2>
-                    <div class="ServiciesBlock">
-                        <div class="SingleService">
+                    <div itemscope itemtype="https://schema.org/ItemList" class="ServiciesBlock">
+                        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" class="SingleService">
                             <div>
-                                <img src="img/diagnosis.svg" alt="Диагностика" class="BlockImage">
+                                <img src="img/diagnosis.svg" alt="Диагностика" itemprop="image" class="BlockImage">
                                 <h3>Диагностика</h3>
                                 <p>Выясним, в чем причина неисправности!</p>
                             </div>
                             <div>
-                                <p class="ServicePrice">Бесплатно</p>
+                                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="ServicePrice">
+                                    <span itemprop="price">Бесплатно</span></p>
                                 <button class="CallMe">Заказать</button>
                             </div>
                         </div>
-                        <div class="SingleService">
+                        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" class="SingleService">
                             <div>
-                                <img src="img/windows.svg" alt="Установка Windows" class="BlockImage">
+                                <img src="img/windows.svg" alt="Установка Windows" itemprop="image" class="BlockImage">
                                 <h3>Установка Windows</h3>
                                 <p>Слетела винда? Переустановим, не беда!</p>
                             </div>
                             <div>
-                                <p class="ServicePrice">15 руб.</p>
+                                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="ServicePrice">
+                                    <span itemprop="price">15 руб.</span></p>
                                 <button class="CallMe">Заказать</button>
                             </div>
                         </div>
-                        <div class="SingleService">
+                        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" class="SingleService">
                             <div>
-                                <img src="img/installing.svg" alt="Установка программ" class="BlockImage">
+                                <img src="img/installing.svg" alt="Установка программ" itemprop="image" class="BlockImage">
                                 <h3>Установка программ</h3>
                                 <p>Поставим софт на все случаи жизни!</p>
                             </div>
                             <div>
-                                <p class="ServicePrice">10 руб.</p>
+                                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="ServicePrice">
+                                    <span itemprop="price">10 руб.</span></p>
                                 <button class="CallMe">Заказать</button>
                             </div>
                         </div>
-                        <div class="SingleService">
+                        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" class="SingleService">
                             <div>
-                                <img src="img/paste.svg" alt="Замена термопасты" class="BlockImage">
+                                <img src="img/paste.svg" alt="Замена термопасты" itemprop="image" class="BlockImage">
                                 <h3>Замена термопасты</h3>
                                 <p>Не позволим компьютеру перегреться!</p>
                             </div>
                             <div>
-                                <p class="ServicePrice">15 руб.</p>
+                                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="ServicePrice">
+                                    <span itemprop="price">15 руб.</span></p>
                                 <button class="CallMe">Заказать</button>
                             </div>
                         </div>
-                        <div class="SingleService">
+                        <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Product" class="SingleService">
                             <div>
-                                <img src="img/wind.svg" alt="Чистка от пыли" class="BlockImage">
+                                <img src="img/wind.svg" alt="Чистка от пыли" itemprop="image" class="BlockImage">
                                 <h3>Чистка от пыли</h3>
                                 <p>Хорошенечько всё прочистим!</p>
                             </div>
                             <div>
-                                <p class="ServicePrice">20 руб.</p>
+                                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="ServicePrice">
+                                    <span itemprop="price">20 руб.</span></p>
                                 <button class="CallMe">Заказать</button>
                             </div>
                         </div>
